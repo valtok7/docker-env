@@ -1,4 +1,11 @@
 {
+    /*"env" : {
+        "myDefaultIncludePath": [   // ${myDefaultIncludePath} or ${env:<myDefaultIncludePath>}} to access
+            "${workspaceFolder}",
+            "${workspaceFolder}/include"
+        ],
+        "myCompilerPath": "/usr/local/bin/gcc-7"
+    },*/
     "configurations": [
         {
             "name": "Linux",
@@ -6,10 +13,12 @@
                 "${workspaceFolder}/**"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/clang++",
+            "compilerPath": "/usr/bin/g++",
             "cStandard": "gnu17",
-            "intelliSenseMode": "linux-clang-x64",
-            "cppStandard": "c++17"
+            "intelliSenseMode": "linux-clang-x64", // clang to deal with a bug in the warning display.
+            "cppStandard": "c++17",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
     "version": 4

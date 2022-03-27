@@ -8,8 +8,10 @@
 #include <string>
 
 class simple_udp {
+private:
     int sock;
     struct sockaddr_in addr;
+    const int BUFFER_MAX = 400;
 
 public:
     simple_udp(std::string address, int port) {
@@ -27,7 +29,6 @@ public:
         bind(sock, (const struct sockaddr *)&addr, sizeof(addr));
     }
     std::string udp_recv() {
-#define BUFFER_MAX 400
         char buf[BUFFER_MAX];
         memset(buf, 0, sizeof(buf));
         recv(sock, buf, sizeof(buf), 0);
