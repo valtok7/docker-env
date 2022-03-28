@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # install software
 RUN apt-get update && \
-    apt-get install -y build-essential cmake libssl-dev clang python3-pip sudo git
+    apt-get install -y build-essential cmake libssl-dev clang python3-pip sudo git iputils-ping net-tools python3-pip
 ## googletest
 RUN git clone https://github.com/google/googletest.git -b release-1.11.0 \
     && cd googletest \
