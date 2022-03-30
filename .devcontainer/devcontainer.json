@@ -10,8 +10,11 @@
 			"UID": "1000",
 			"GID": "1000",
 			"USERNAME": "user"
-		}
+		},
 	},
+	"runArgs": [
+		"--privileged"
+	],
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"C_Cpp.default.cppStandard": "c++17",
